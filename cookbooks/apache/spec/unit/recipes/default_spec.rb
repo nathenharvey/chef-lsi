@@ -16,5 +16,9 @@ describe 'apache::default' do
     it 'converges successfully' do
       chef_run # This should not raise an error
     end
+
+    it 'installs httpd' do
+      expect(chef_run).to install_package 'httpd'
+    end
   end
 end
