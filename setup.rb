@@ -1,7 +1,15 @@
-['vim', 'emacs', 'nano', 'tree'].each do |p|
+['vim', 'emacs', 'nano', 'tree', 'git'].each do |p|
   package p do
     action :install
   end
+end
+
+file '/home/chef/.gitconfig' do
+  content <<EOF
+[user]
+	name = Nathen Harvey
+	email = nharvey@chef.io
+EOF
 end
 
 # package 'vim' do
