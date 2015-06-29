@@ -14,10 +14,10 @@ file '/var/www/html/index.html' do
 end
 
 # Attempt to start a bogus service, ignore the failure
-service 'foo' do
-  action :start
-  ignore_failure true
-end
+# service 'foo' do
+#   action :start
+#   ignore_failure true
+# end
 
 
 service 'httpd' do
