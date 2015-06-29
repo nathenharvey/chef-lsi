@@ -6,9 +6,16 @@ file 'hello.txt' do
   mode  '0777'
 end
 
-script '/home/chef/myscript.sh' do
+execute 'append to file' do
   action :run
-  not_if do
-    File.exist?("/tmp/hi")
-  end
+  command 'echo "hello" >> /tmp/hi'
+#   not_if do
+#     File.exist?("/tmp/hi")
+#   end
 end
+
+bash 'append more' do
+  command '/home/chef/myscript.sh'
+  code '/home/chef/myscript.sh'
+end
+
