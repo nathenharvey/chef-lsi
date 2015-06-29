@@ -28,9 +28,9 @@ end
 #   action :install
 # end
 
-file '/etc/motd' do
+template '/etc/motd' do
+  source 'motd.erb'
   action :create
-  content 'This server is property of Chef Software, Inc.'
   owner 'root'
   group 'root'
   manage_symlink_source true
