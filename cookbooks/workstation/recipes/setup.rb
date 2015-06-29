@@ -4,7 +4,7 @@
   end
 end
 
-file '/home/chef/.gitconfig' do
+file "#{ENV['HOME']}/.gitconfig" do
   content <<EOF
 [user]
 	name = Nathen Harvey
