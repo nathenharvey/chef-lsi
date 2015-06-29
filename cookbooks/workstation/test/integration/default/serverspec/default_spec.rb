@@ -16,4 +16,8 @@ describe 'workstation::default' do
   it "creates a message of the day with the correct content" do
     expect(file "/etc/motd").to contain /property of/i
   end
+
+  it "can reach google" do
+    expect(command('curl http://google.com').exit_status). to eq 0 
+  end
 end
