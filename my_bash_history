@@ -1,0 +1,518 @@
+    1  clear
+    2  ls
+    3  touch nathenharvey
+    4  ls
+    5  touch nathenharvey
+    6  ls
+    7  chef -v
+    8  ps -ef | grep docker
+    9  which vim
+   10  chef-apply --help
+   11  sudo chef-apply "package 'vim'"
+   12  sudo chef-apply -e "package 'vim'"
+   13  sudo chef-apply -e "package 'nano'"
+   14  sudo chef-apply -e "package 'cowsay'"
+   15  vim hello.rb
+   16  sudo chef-apply hello.rb 
+   17  ls
+   18  cat hello.txt 
+   19  sudo chef-apply hello.rb 
+   20  vim hello.txt 
+   21  sudo vim hello.txt 
+   22  sudo chef-apply hello.rb 
+   23  vim hello.rb 
+   24  sudo chef-apply hello.rb 
+   25  ll
+   26  id
+   27  ll
+   28  rm hello.txt 
+   29  sudo chef-apply hello.rb 
+   30  ll
+   31  vim hello.rb 
+   32  sudo chef-apply hello.rb 
+   33  vim hello.rb 
+   34  clear
+   35  sudo chef-apply hello.rb 
+   36  vim myscript.sh
+   37  chmod +x myscript.sh 
+   38  ./myscript.sh 
+   39  cat /tmp/hi
+   40  vim myscript.sh
+   41  ./myscript.sh 
+   42  cat /tmp/hi
+   43  vim hello.rb 
+   44  sudo chef-apply hello.rb 
+   45  rm /tmp/hi
+   46  ls /tmp/hi
+   47  sudo chef-apply hello.rb 
+   48  /home/chef/myscript.sh
+   49  echo $0
+   50  sudo /home/chef/myscript.sh
+   51  echo $?
+   52  ls /tmp/chef-script20150629-25698-1l6no8i
+   53  vim hello.rb 
+   54  vim setup.rb
+   55  sudo chef-apply setup.rb 
+   56  vim setup.rb 
+   57  sudo chef-apply setup.rb 
+   58  vim setup.rb 
+   59  sudo chef-apply setup.rb 
+   60  vim setup.rb 
+   61  clear
+   62  sudo chef-apply -e "package 'git'"
+   63  git init .
+   64  git status
+   65  vim .gitignore
+   66  rm nathenharvey 
+   67  git status
+   68  vim .gitignore 
+   69  clear
+   70  git status
+   71  git add .
+   72  git commit -m "Initial commit with some recipes"
+   73   git config --global user.name "Nathen Harvey"
+   74  git config --global user.email nharvey@chef.io
+   75   git commit --amend --reset-author
+   76  git log
+   77  git status
+   78  vim .gitignore 
+   79  git status
+   80  git commit -am "Ignore my gitconfig"
+   81  vim setup.rb 
+   82  cat .gitconfig 
+   83  vim setup.rb 
+   84  git status
+   85  git commit -am "Put git into my setup recipe"
+   86  ls
+   87  pwd
+   88  chef generate cookbook workstation
+   89  clear
+   90  ls
+   91  git add workstation/
+   92  git commit -m "initial workstation cookbook"
+   93  mv setup.rb workstation/recipes/
+   94  git status
+   95  git add workstation/recipes/setup.rb 
+   96  git status
+   97  git rm setup.rb
+   98  clear
+   99  git status
+  100  git commit -m "Move setup.rb into our cookbook"
+  101  clear
+  102  ls
+  103  sudo chef-client --local-mode -r "recipe[workstation::setup]"
+  104  clear
+  105  ls
+  106  mkdir cookbooks
+  107  mv workstation cookbooks/
+  108  git rm -r workstation
+  109  git add cookbooks
+  110  clear
+  111  git status
+  112  git commit -am "Move workstation cookbook into a cookbooks directory"
+  113  clear
+  114  sudo chef-client --local-mode -r "recipe[workstation::setup]"
+  115  sudo chef-client --local-mode -r "recipe[workstation::setup.rb]"
+  116  sudo chef-client --local-mode -r "recipe[workstation::setup]"
+  117  pwd
+  118  git status
+  119  vim .gitignore 
+  120  git status
+  121  git commit -am "ignore the nodes directory"
+  122  clear
+  123  pwd
+  124  ls
+  125  chef generate cookbook cookbooks/apache
+  126  clear
+  127  git status
+  128  git add cookbooks/apache/
+  129  git commit -m "initial cookbook"
+  130  clear
+  131  vim cookbooks/apache/recipes/server.rb
+  132  sudo chef-client --local-mode -r "recipe[apache::server]"
+  133  vim cookbooks/apache/recipes/server.rb 
+  134  sudo chef-client --local-mode -r "recipe[apache::server]"
+  135  git status
+  136  git add .
+  137  clear
+  138  vim cookbooks/apache/recipes/server.rb 
+  139  sudo chef-client --local-mode -r "recipe[apache::server]"
+  140  vim cookbooks/apache/recipes/server.rb 
+  141  sudo chef-client --local-mode -r "recipe[apache::server]"
+  142  vim cookbooks/apache/recipes/server.rb 
+  143  sudo chef-client --local-mode -r "recipe[apache::server]"
+  144  ll /var/www/html/index.html
+  145  ls /home
+  146  ls
+  147  vim hello.
+  148  vim hello.rb 
+  149  vim myscript.sh 
+  150  which echo
+  151  which >>
+  152  vim myscript.sh 
+  153  sudo chef-apply hello.rb 
+  154  vim hello.rb 
+  155  sudo chef-apply hello.rb 
+  156  sudo chef-apply hello.rb  -l debug
+  157  vim hello.rb 
+  158  vim myscript.sh 
+  159  vim hello.rb 
+  160  sudo chef-apply hello.rb  -l debug
+  161  vim hello.rb 
+  162  sudo chef-apply hello.rb  -l debug
+  163  vim hello.rb 
+  164  sudo chef-apply hello.rb
+  165  wc -l /tmp/hi 
+  166  sudo chef-apply hello.rb
+  167  wc -l /tmp/hi 
+  168  vim hello.rb 
+  169  ls /home/chef/myscript.sh
+  170  ll /home/chef/myscript.sh
+  171  sudo /home/chef/myscript.sh
+  172  wc -l /tmp/hi 
+  173  sudo chef-apply hello.rb
+  174  vim hello.rb 
+  175  sudo chef-apply hello.rb
+  176  wc -l /tmp/hi 
+  177  sudo chef-apply hello.rb
+  178  wc -l /tmp/hi 
+  179  vim hello.rb 
+  180  wc -l /tmp/hi 
+  181  sudo chef-apply hello.rb
+  182  vim hello.rb 
+  183  sudo chef-apply hello.rb
+  184  vim hello.rb 
+  185  sudo chef-apply hello.rb
+  186  vim hello.rb 
+  187  sudo chef-apply hello.rb
+  188  vim hello.rb 
+  189  sudo chef-apply hello.rb
+  190  clear
+  191  git status
+  192  git add hello.rb 
+  193  git commit -m "Make hello.rb append to a file
+  194  "
+  195  git diff myscript.sh 
+  196  git checkout -- myscript.sh 
+  197  clear
+  198  git status
+  199  git diff
+  200  vim cookbooks/apache/recipes/server.rb 
+  201  git status
+  202  git commit -am "Update the apache server recipe
+  203  "
+  204  clear
+  205  pwd
+  206  ls
+  207  sudo chef-client -z -r "recipe[workstation::setup],recipe[apache::server]"
+  208  clear
+  209  tree cookbooks/apache/
+  210  vim cookbooks/workstation/recipes/default.rb 
+  211  sudo chef-client -z -r "recipe[workstation]"
+  212  vim cookbooks/workstation/metadata.rb 
+  213  sudo chef-client -z -r "recipe[workstation]"
+  214  vim cookbooks/workstation/metadata.rb 
+  215  vim cookbooks/workstation/recipes/default.rb 
+  216  vim cookbooks/apache/recipes/default.rb 
+  217  sudo chef-client -z -r "recipe[workstation],recipe[apache]"
+  218  vim cookbooks/apache/recipes/server.rb 
+  219  clear
+  220  sudo chef-client -z -r "recipe[workstation],recipe[apache]"
+  221  clear
+  222  git status
+  223  git diff cookbooks/workstation/metadata.rb
+  224  git checkout -- cookbooks/workstation/metadata.rb
+  225  clear
+  226  git status
+  227  git add cookbooks/apache/recipes/default.rb 
+  228  git add cookbooks/workstation/recipes/default.rb 
+  229  git commit -m "include recipes"
+  230  git commit -am "clean up the apache server recipe"
+  231  clear
+  232  git status
+  233  clear
+  234  vim cookbooks/workstation/recipes/default.rb 
+  235  vim cookbooks/apache/recipes/default.rb 
+  236  cd cookbooks/workstation/
+  237  vim .kitchen.yml 
+  238  git status
+  239  git commit -am "Set-up kitchen for docker"
+  240  kitchen list
+  241  cd ..
+  242  pwd
+  243  kitchen list
+  244  cd workstation/
+  245  kitchen list
+  246  kitchen create
+  247  clear
+  248  kitchen list
+  249  kitchen ssh
+  250  kitchen login
+  251  pwd
+  252  kitchen converg
+  253  vim recipes/default.rb 
+  254  vim recipes/setup.rb 
+  255  kitchen converge
+  256  vim recipes/setup.rb 
+  257  kitchen converge
+  258  vim recipes/setup.rb 
+  259  kitchen destroy
+  260  kitchen list
+  261  kitchen login
+  262  kitchen list
+  263  kitchen converge
+  264  clear
+  265  tree test/
+  266  pwd
+  267  vim test/integration/default/serverspec/default_spec.rb 
+  268  vim test/integration/helpers/serverspec/spec_helper.rb 
+  269  vim test/integration/default/serverspec/default_spec.rb 
+  270  clear
+  271  pwd
+  272  kitchen verify
+  273  vim test/integration/default/serverspec/default_spec.rb 
+  274  kitchen verify
+  275  vim test/integration/default/serverspec/default_spec.rb 
+  276  kitchen verify
+  277  vim test/integration/default/serverspec/default_spec.rb 
+  278  kitchen verify
+  279  vim test/integration/default/serverspec/default_spec.rb 
+  280  kitchen verify
+  281  vim test/integration/default/serverspec/default_spec.rb 
+  282  kitchen verify
+  283  vim test/integration/default/serverspec/default_spec.rb 
+  284  kitchen verify
+  285  vim test/integration/default/serverspec/default_spec.rb 
+  286  kitchen verify
+  287  vim test/integration/default/serverspec/default_spec.rb 
+  288  kitchen verify
+  289  vim test/integration/default/serverspec/default_spec.rb 
+  290  kitchen loging
+  291  kitchen login
+  292  vim test/integration/default/serverspec/default_spec.rb 
+  293  kitchen login
+  294  kitchen verify
+  295  vim test/integration/default/serverspec/default_spec.rb 
+  296  kitchen verify
+  297  vim test/integration/default/serverspec/default_spec.rb 
+  298  kitchen verify
+  299  vim test/integration/default/serverspec/default_spec.rb 
+  300  kitchen verify
+  301  vim test/integration/default/serverspec/default_spec.rb 
+  302  kitchen verify
+  303  vim test/integration/default/serverspec/default_spec.rb 
+  304  kitchen verify
+  305  vim test/integration/default/serverspec/default_spec.rb 
+  306  kitchen verify
+  307  vim test/integration/default/serverspec/default_spec.rb 
+  308  kitche verify
+  309  kitchen verify
+  310  vim test/integration/default/serverspec/default_spec.rb 
+  311  kitchen verify
+  312  vim test/integration/default/serverspec/default_spec.rb 
+  313  kitchen verify
+  314  vim test/integration/default/serverspec/default_spec.rb 
+  315  kitchen verify
+  316  vim test/integration/default/serverspec/default_spec.rb 
+  317  cd ../apache/
+  318  pwd
+  319  kitchen list
+  320  vim .kitchen.yml 
+  321  kitchen list
+  322  vim test/integration/default/serverspec/default_spec.rb 
+  323  kitchen verify 
+  324  vim test/integration/default/serverspec/default_spec.rb 
+  325  kitchen verify
+  326  vim test/integration/default/serverspec/default_spec.rb 
+  327  git status
+  328  cd ..
+  329  git status
+  330  git add workstation/*
+  331  clear
+  332  git status
+  333  gi tadd workstation/recipes/setup.rb workstation/test/integration/default/serverspec/default_spec.rb 
+  334  git add workstation/recipes/setup.rb workstation/test/integration/default/serverspec/default_spec.rb 
+  335  clear
+  336  git status
+  337  git commit -m "Update the workstation tests"
+  338  git add apache/.kitchen
+  339  git add apache/.kitchen.yml 
+  340  git commit -m "Setup the apache test kitchen"
+  341  clear
+  342  git status
+  343  git add apache/test/integration/default/serverspec/default_spec.rb 
+  344  git commit -m "Write one working, 2 pending apache examples"
+  345  rm -fr .kitchen/
+  346  clear
+  347  git status
+  348  clear
+  349  cd ..
+  350  clear
+  351  ls
+  352  clear
+  353  cd cookbooks/apache/
+  354  kitchen test
+  355  echo $?
+  356  vim test/integration/default/serverspec/default_spec.rb 
+  357  kitchen test
+  358  echo $?
+  359  kitchen list
+  360  kitchen login
+  361  kitchen destroy
+  362  git status
+  363  git checkout -- test/integration/default/serverspec/default_spec.rb 
+  364  clear
+  365  git status
+  366  rspec spec/
+  367  vim spec/unit/recipes/default_spec.rb 
+  368  rspec spec/
+  369  vim spec/unit/recipes/default_spec.rb 
+  370  ohai
+  371  ohai | wc -l
+  372  ohai memory
+  373  cd 
+  374  clear
+  375  pwd
+  376  ls
+  377  ls nodes/
+  378  knife node list --local
+  379  knife node show ip-172-31-27-154.ec2.internal --local
+  380  knife search node "recipes:apache::default" --local
+  381  knife search node "recipes:'apache::default'" --local
+  382  knife search node "run_list:apache" --local
+  383  ls
+  384  mv ip-172-31-29-85.ec2.internal.json nodes/
+  385  sudo mv ip-172-31-29-85.ec2.internal.json nodes/
+  386  ls
+  387  clear
+  388  ls nodes/
+  389  knife node list --local
+  390  knife search node "run_list:apache" --local
+  391  knife node show ip-172-31-29-85.ec2.internal --local
+  392  knife search node "run_list:apache\:\:server" --local
+  393  vim cookbooks/workstation/recipes/default.rb 
+  394  vim cookbooks/workstation/recipes/setup.rb 
+  395  cd cookbooks/
+  396  chef generate template workstation motd
+  397  vim workstation/templates/default/motd.erb 
+  398  ohai ipaddress
+  399  vim workstation/recipes/setup.rb 
+  400  cd
+  401  sudo chef-client -z -r "recipe[workstation],recipe[apache]"
+  402  vim cookbooks/workstation/templates/default/motd.erb 
+  403  clear
+  404  vim cookbooks/workstation/templates/default/motd.erb 
+  405  sudo chef-client -z -r "recipe[workstation],recipe[apache]"
+  406  vim cookbooks/workstation/recipes/setup.rb 
+  407  cd cookbooks/
+  408  chef generate attribute workstation default
+  409  vim workstation/attributes/default.rb 
+  410  cd ..
+  411  clear
+  412  knife node list --locla
+  413  knife node list --local
+  414  knife node show ip-172-31-27-154.ec2.internal --local -a ipaddress
+  415  knife node show ip-172-31-27-154.ec2.internal --local -a workstation
+  416  sudo chef-client -z -r "recipe[workstation],recipe[apache]"
+  417  knife node show ip-172-31-27-154.ec2.internal --local -a workstation
+  418  vim cookbooks/workstation/templates/default/motd.erb 
+  419  vim cookbooks/workstation/recipes/setup.rb 
+  420  vim cookbooks/workstation/attributes/default.rb 
+  421  mkdir environments
+  422  vim environments/production.json
+  423  knife enviornment from file production.json --local
+  424  ls
+  425  ls environments/
+  426  knife environment from file production.json --local
+  427  clear
+  428  knife node environment set ip-172-31-27-154.ec2.internal production
+  429  knife node environment set ip-172-31-27-154.ec2.internal production --local
+  430  knife environment --help 
+  431  knife node --help
+  432  knife node enivronment set ip-172-31-27-154.ec2.internal production --local
+  433  knife node environment set ip-172-31-27-154.ec2.internal production --local
+  434  sudo knife node environment set ip-172-31-27-154.ec2.internal production --local
+  435  knife node show ip-172-31-27-154.ec2.internal --local -a workstation
+  436  knife node show ip-172-31-27-154.ec2.internal --local
+  437  clear
+  438  pwd
+  439  ls
+  440  cat environments/production.json 
+  441  knife node show ip-172-31-27-154.ec2.internal --local 
+  442  vim cookbooks/workstation/attributes/default.rb 
+  443  vim environments/production.json 
+  444  cat /etc/motd
+  445  sudo knife node environment set ip-172-31-27-154.ec2.internal _default --local
+  446  sudo chef-client -z -r "recipe[workstation],recipe[apache]"
+  447  sudo knife node environment set ip-172-31-27-154.ec2.internal production --local
+  448  sudo chef-client -z -r "recipe[workstation],recipe[apache]"
+  449  git
+  450  git stauts
+  451  git status
+  452  git diff cookbooks/apache/spec/
+  453  clear
+  454  git add cookbooks/apache/spec/
+  455  git commit -m "a simple chefspec test"
+  456  git status
+  457  git diff cookbooks/workstation/recipes/setup.rb 
+  458  git add cookbooks/workstation/recipes/setup.rb 
+  459  git status
+  460  git add cookbooks/workstation/templates/ cookbooks/workstation/attributes/
+  461  git commit -m "Use attributes in my motd"
+  462  git status
+  463  git add environments/
+  464  git commit -m "Define a production environment"
+  465  clear
+  466  vim cookbooks/workstation/templates/default/motd.erb 
+  467  vim cookbooks/workstation/attributes/default.rb 
+  468  vim cookbooks/workstation/templates/default/motd.erb 
+  469  knife node show ip-172-31-27-154.ec2.internal --local -a workstation
+  470  ls environments/
+  471  vim environments/production.json 
+  472  chef generate repo chef-repo
+  473  tree chef-repo/
+  474  cd chef-repo/
+  475  git status
+  476  cd ..
+  477  git 
+  478  clear
+  479  git status
+  480  git add chef-repo/
+  481  git commit -m "an example chef-repo"
+  482  git status
+  483  git diff
+  484  git checkout -- environments/production.json 
+  485  clear
+  486  git status
+  487  knife cookbook upload apache --local
+  488  exit
+  489  cd /etc/chef
+  490  sudo cat client.rb 
+  491  pwd
+  492  exit
+  493  ls
+  494  cd cookbooks/
+  495  ls
+  496  cd workstation/
+  497  ls
+  498  pwd
+  499  vimm test/integration/default/serverspec/default_spec.rb 
+  500  vim test/integration/default/serverspec/default_spec.rb 
+  501  kitchen verify
+  502  vim .kitchen.yml 
+  503  kitchen converge
+  504  git status
+  505  cd
+  506  git status
+  507  git add cookbooks/workstation/.kitchen.yml 
+  508  git commit -m "Add an attribute to my test kitchen"
+  509  git add cookbooks/workstation/test/integration/default/serverspec/default_spec.rb 
+  510  git commit -m "Make sure I can reach the internet"
+  511  clear
+  512  git status
+  513  ls .chef/
+  514  vim .gitignore 
+  515  rm cookbooks/apache/.uploaded-cookbook-version.json 
+  516  vim .gitignore 
+  517  history
+  518  history >> my_bash_history
